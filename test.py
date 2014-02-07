@@ -1,10 +1,10 @@
-import binascii, cgi
+import binascii
 
-key = int('000010', 2) #sample 7-digit binary string
+key = int('0001010', 2) #sample 7-digit binary string
 
-message = "Hello, how are you? I am great, how are you? Great! GREAT!!!!!!!!!!!!"
+message = "Hello! How are you doing today?"
 
-encrypted_message = 'Jgnnm.\"jmu\"cpg\"{mw=\"K\"co\"epgcv.\"jmu\"cpg\"{mw=\"Epgcv#\"EPGCV############'
+encrypted_message = 'Boffe+*Be}*kxo*se*necdm*~enks5'
 
 def Encrypt(string):
 	return ' '.join(str(int(format(ord(x)))^key) for x in string)
@@ -28,3 +28,6 @@ def Decode(string):
 	decoded_list = [x^key for x in num_list]
 	return "".join(map(chr, decoded_list))
 
+print Get_Encoded_String(Encrypt('Hello! How are youaWFE POIFEJWFOIWEJ F8238942110!!! doing today?'))
+
+print Decode(Get_Chars(encrypted_message))
