@@ -24,7 +24,7 @@ class OneTimePad:
 		return " ".join([str(ord(x)) for x in encrypted_message])
 
 	def Decode(self, string):
-		num_list = Return_Int_List(string)
+		num_list = self.Return_Int_List(string)
 		decoded_list = [x^self.key for x in num_list]
 		return "".join(map(chr, decoded_list))
 
@@ -34,6 +34,10 @@ class OneTimePad:
 	def Decrypt_Message(self, encrypted_message):
 		return self.Decode(self.Get_Chars(encrypted_message))
 
-Cryptosystem = OneTimePad('0001010')
+Cryptosystem = OneTimePad('0001010') #Default '0001010', Enter the 7 digit binary key that is shared between both users
+"""NOTE: Some binary keys introduce non-escaped quotation marks, which break the program when copied and pasted"""
 
-print Cryptosystem.Encrypt_Message("My name is Steven Schmatz and this is my original message.")
+message = "My name is Steven Schmatz and this is my original message."
+
+print Cryptosystem.Encrypt_Message(message)
+print Cryptosystem.Decrypt_Message(Cryptosystem.Encrypt_Message(message))
