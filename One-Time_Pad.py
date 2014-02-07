@@ -6,7 +6,7 @@ message = "Hello! How are you doing today?"
 
 encrypted_message = 'Boffe+*Be}*kxo*se*necdm*~enks5'
 
-def Encrypt(string):
+def Encode(string):
 	return ' '.join(str(int(format(ord(x)))^key) for x in string)
 
 def Return_Int_List(space_separated_string):
@@ -28,6 +28,8 @@ def Decode(string):
 	decoded_list = [x^key for x in num_list]
 	return "".join(map(chr, decoded_list))
 
-print Get_Encoded_String(Encrypt('Hello! How are youaWFE POIFEJWFOIWEJ F8238942110!!! doing today?'))
+def Encrypt_Message(plain_text):
+	return Get_Encoded_String(Encode(plain_text))
 
-print Decode(Get_Chars(encrypted_message))
+def Decrypt_Message(encrypted_message):
+	return Decode(Get_Chars(encrypted_message))
