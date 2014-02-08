@@ -37,7 +37,9 @@ class OneTimePad:
 Cryptosystem = OneTimePad('0001010') #Default '0001010', Enter the 7 digit binary key that is shared between both users
 """NOTE: Some binary keys introduce non-escaped quotation marks, which break the program when copied and pasted"""
 
-message = "My name is Steven Schmatz and this is my original message."
+message = "The goose has nested, I repeat, the goose has nested."
+encrypted_message = "^bo*meeyo*bky*doy~on&*C*xozok~&*~bo*meeyo*bky*doy~on$"
 
 print Cryptosystem.Encrypt_Message(message)
-print Cryptosystem.Decrypt_Message(Cryptosystem.Encrypt_Message(message))
+print Cryptosystem.Decrypt_Message(encrypted_message)
+
